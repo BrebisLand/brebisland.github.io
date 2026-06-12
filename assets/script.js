@@ -19,21 +19,21 @@ const slides = [
 //je créer une variable constante avec le chemin d'accés a mes images
 const slidesDir = "./assets/images/slideshow/"
 
-//je met un eventListener sur ma flèche de gauche lorsque je clique dessus
+//je met un eventListener sur ma flèche de gauche (précedente) lorsque je clique dessus
 let arrowLeft = document.getElementById("arrowLeft");
 arrowLeft.addEventListener("click", () => {
 	console.log("Précédent")
 	let selectedIndex = updateDots("previous")
 	updateSlideAndTagline(selectedIndex)
 })
-//je met un eventListener sur ma flèche suivante lorsque je clique dessus
+//je met un eventListener sur ma flèche de droite (suivante) lorsque je clique dessus
 let arrowRight = document.getElementById("arrowRight");
 arrowRight.addEventListener("click", () => {
 	console.log("Suivant")
 	let selectedIndex = updateDots("next")
 	updateSlideAndTagline(selectedIndex)
 })
-//fonction pour changer la class des dots quand on clique sur la flèche suivante ou précédente
+//fonction pour changer la class des dots quand on clique sur la flèche suivante ou précédente. On parcours tout les dots pour trouver où "dot_selected" est actif pour le désactivé et le re activé au suivant ou au précedent.
 function updateDots(direction) {
 	let selectedIndex = 0
 	let dotList = document.getElementById("dots").getElementsByClassName("dot")
@@ -43,7 +43,7 @@ function updateDots(direction) {
 		console.log(element)
 		//si dans mon élément il y a la class dot_selected supprime la et remplace la par la class dot
 		if (element.classList.contains("dot_selected")) {
-			//enlève la class selectionné, ici "dot_selected" par la class de l'élément ci dessous, ici "dot"
+			//enlève la class selectionné, ici "dot_selected" et remplace la par la class de l'élément ci dessous, ici "dot"
 			element.className = "dot"
 
 			//définir le dot qui est sélectionné
