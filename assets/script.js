@@ -38,10 +38,10 @@ function updateDots(direction) {
 	let selectedIndex = 0
 	let dotList = document.getElementById("dots").getElementsByClassName("dot")
 	console.log(dotList)
-	for (let i = 0; i < dotList.length; i++) {
+	for (let i = 0; i < dotList.length; i++) { //on commence a l'index 0, on continue temps qu'on a pas atteint les 4 dots, on ajoute 1 a l'index tant qu'on a pas atteint les 4 dots
 		const element = dotList[i];
 		console.log(element)
-		//si dans mon élément il y a la class dot_selected supprime la et remplace la par la class dot
+		//si dans mon élément il y a la class dot_selected supprime la et remplace la par la class dot, "contains" renvoie a une fonction booléan, true or false
 		if (element.classList.contains("dot_selected")) {
 			//enlève la class selectionné, ici "dot_selected" et remplace la par la class de l'élément ci dessous, ici "dot"
 			element.className = "dot"
