@@ -59,7 +59,7 @@ function updateDots(direction) {
 					selectedIndex = i + 1
 				}
 			} else {
-				//sinon, si on clique sur la fléche précédent
+				//sinon, si on est sur le premier dot
 				if (i === 0) {
 					//si je suis sur le premier dot et que je reviens en arrière je veux que le dernier dot prenne la class "dot_selected"
 					dotList[dotList.length - 1].className = "dot dot_selected"
