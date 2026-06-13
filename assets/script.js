@@ -48,9 +48,9 @@ function updateDots(direction) {
 
 			//définir le dot qui est sélectionné
 			if (direction === "next") {
-				//si on clique sur la fleche suivante
+				//son vérifie si on est sur le dernier dot
 				if (i === dotList.length - 1) {
-					//au dernier dot on repasse au premier dot
+					//si oui on met la class dot dot_selected
 					dotList[0].className = "dot dot_selected"
 					selectedIndex = 0
 				} else {
